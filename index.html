@@ -17,7 +17,7 @@
         </header>
 
         <!-- API Key Input -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6" style="display:none;">
             <h2 class="text-xl font-semibold text-gray-800 mb-4">🔑 ตั้งค่า API Key</h2>
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700 mb-2">
@@ -107,6 +107,7 @@
     </div>
 
     <script>
+                const GEMINI_API_KEY = 'AIzaSyB-xF3yDSnGZkFqGgRxXVRoNBq9BHKY4TM';
         let currentLanguage = 'TH';
         
         // Load saved API key
@@ -128,12 +129,10 @@
         }
 
         async function evaluatePrompt() {
-            const apiKey = document.getElementById('apiKey').value.trim();
+                    const apiKey = GEMINI_API_KEY;
+            
             const promptText = document.getElementById('promptText').value.trim();
 
-            if (!apiKey) {
-                alert('กรุณาใส่ Google Gemini API Key');
-                return;
             }
 
             if (!promptText) {
